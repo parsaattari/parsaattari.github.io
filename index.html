@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Home</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<style type="text/css">
+/*p {
+  letter-spacing: -5px;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease; 
+  cursor: pointer
+}
+#a:hover {
+  letter-spacing: 1px; 
+}
+#b:hover {
+  letter-spacing: 1em; 
+}
+#c:hover {
+  letter-spacing: 10px; 
+}*/
+</style>
+
+<body>
+<!-- <p id="a">hover with letter-spacing = 1px transition</p>
+<p id="b">hover with letter-spacing = 1em transition</p>
+<p id="c">Firefox Vs Chrome</p> -->
+
+<!-- <p onmouseover="change(this)" onmouseout="changeBack(this)" id="demo">
+Hello my name is Parsa and I am senior at UC Berkeley.
+</p>
+<p onmouseover="change(this)" onmouseout="changeBack(this)" id="demo2">
+
+</p> -->
+
+<!-- 
+autor: Marco Barría 
+https://twitter.com/marco_bf
+-->
+
+<div class='hexagon'>
+  <ul>
+    <li class='polygon_top'>
+      <a href="#">Home</a>
+    </li>
+    <li class='polygon_top'></li>
+    <li class='polygon_top'>
+      <a href="#">About</a>
+    </li>
+    <li class='polygon_bottom'>
+      <a href="#">Resume</a>
+    </li>
+    <li class='polygon_bottom'></li>
+    <li class='polygon_bottom'>
+      <a href="#">Projects</a>
+    </li>
+  </ul>
+
+</div>
+<p onmouseover="change(this)" onmouseout="changeBack(this)" id="demo">Welcome to Parsa's website!</p>
+<p onmouseover="change(this)" onmouseout="changeBack(this)" id="demo2"></p>
+</body>
+
+<script type="text/javascript">
+function change(words){
+	var text = document.getElementById("demo").innerHTML
+	var possible = "abcdefghijklmnopqrstuvwxyz";
+	var cipher = 3
+	character = ""
+	for(i = 0; i < text.length; i++){
+		var c = text[i]
+		if (possible.indexOf(c.toLowerCase()) >= 0) {
+			var index = possible.indexOf(c.toLowerCase())
+			var temp = ((index + cipher) % 26)
+			var changed = possible[temp]
+			character += changed
+		}
+	}
+	character += "!"
+	document.getElementById("demo").innerHTML = character
+	document.getElementById("demo2").innerHTML = "This is Caesar Cipher!"
+}
+function changeBack(words){
+	document.getElementById("demo").innerHTML = "Welcome to Parsa's website!";
+	document.getElementById("demo2").innerHTML = ""
+	//console.log("Changing Back")
+}
+</script>
+
+</html>
+
+
+
+
+
+
